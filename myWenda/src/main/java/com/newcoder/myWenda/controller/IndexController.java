@@ -29,9 +29,9 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.newcoder.myWenda.aspect.LogAspect;
 import com.newcoder.myWenda.model.User;
 
-@Controller
+//@Controller
 public class IndexController {
-	private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
+	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 	@RequestMapping(path= {"/","/index"})
 	@ResponseBody
 	public String indext(HttpSession httpSession) {
