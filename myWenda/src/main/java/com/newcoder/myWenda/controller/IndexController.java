@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,13 +26,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.newcoder.myWenda.aspect.LogAspect;
 import com.newcoder.myWenda.model.User;
 
 @Controller
 public class IndexController {
+	private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 	@RequestMapping(path= {"/","/index"})
 	@ResponseBody
 	public String indext(HttpSession httpSession) {
+		logger.info("VISTI HOME");
 		return "hello"+httpSession.getAttribute("msg");
 	}
 	
