@@ -27,16 +27,17 @@ public class InitDataBaseTests {
 	@Test
 	public void initDatabase() {
 		Random random = new Random();
+		
 		for(int i=0;i<11;++i) {
 			User user = new User();
 			user.setHeadUrl(String.format("http://images.nowcoder.com/head/%dt.png", random.nextInt(1000)));
 			user.setName(String.format("USER%d", i));
-			user.setPassword("");
-			user.setSalt("");
-//			userDAO.addUser(user);
-			user.setId(i+20);
 			user.setPassword("xx");
-			userDAO.updatePassword(user);
+			user.setSalt("");
+			userDAO.addUser(user);
+//			user.setId(i);
+//			user.setPassword("xx");
+//			userDAO.updatePassword(user);
 			
 			Question question = new Question();
 			question.setCommentCount(i);
@@ -49,9 +50,9 @@ public class InitDataBaseTests {
 			
 //			questionDAO.addQuestion(question);
 		}
-		Assert.assertEquals("xx", userDAO.selectById(22).getPassword());
-		userDAO.deleteById(21);
-		Assert.assertNull(userDAO.selectById(21));
+//		Assert.assertEquals("xx", userDAO.selectById(22).getPassword());
+//		userDAO.deleteById(21);
+//		Assert.assertNull(userDAO.selectById(21));
 		
 		System.out.println(questionDAO.selectLatestQuestions(0, 0, 10));
 	}
