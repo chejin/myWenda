@@ -26,10 +26,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.newcoder.myWenda.aspect.LogAspect;
 import com.newcoder.myWenda.model.User;
 
-@Controller
+//@Controller
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 	@RequestMapping(path= {"/","/index"})
