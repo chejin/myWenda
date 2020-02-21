@@ -66,7 +66,7 @@ public class UserService {
 			return map;
 		}
 		
-		if(StringUtils.isEmpty(name)) {
+		if(StringUtils.isEmpty(password)) {
 			map.put("msg", "密码不能为空");
 			return map;
 		}
