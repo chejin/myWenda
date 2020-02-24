@@ -51,7 +51,7 @@ public class HomeController {
 			vo.set("question", question);
 			vo.set("user", UserService.getUser(question.getUserId()));
 			vos.add(vo);
-//			System.out.println(question.getUserId());
+//			System.out.println("=================================="+UserService.getUser(question.getUserId()));
 		}
 		return vos;
 	}

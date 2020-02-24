@@ -9,14 +9,14 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>牛客 - 与世界分享你的知识、经验和见解</title>
     <link rel="dns-prefetch" href="">
-    <link rel="stylesheet" href="../../styles/login.css">
+    <link type="text/javascript" rel="stylesheet" href="/static/styles/login.css">
 
 </head>
 <body class="zhi  no-auth">
 <div class="index-main">
     <div class="index-main-body">
         <div class="index-header">
-            <h1 class="logo hide-text"><img src="${path}/images/res/nk.png" alt=""></h1>
+            <h1 class="logo hide-text"><img  src="static/images/res/nk.png" alt="没图片"></h1>
             <h2 class="subtitle">
             	<#if msg ??>
                	 		${msg}
