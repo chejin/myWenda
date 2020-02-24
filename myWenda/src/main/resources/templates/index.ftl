@@ -73,5 +73,5 @@
         </div>
     </div>
 <#include "js.ftl">
-<script type="text/javascript" src="/scripts/main/site/detail.js"></script>
+<script type="text/javascript" src="/static/scripts/main/site/detail.js"></script>
 <#include "footer.ftl">
