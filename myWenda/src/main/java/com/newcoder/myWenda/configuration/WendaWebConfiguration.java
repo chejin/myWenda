@@ -1,27 +1,46 @@
 package com.newcoder.myWenda.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.newcoder.myWenda.interceptor.LoginRequredInterceptor;
 import com.newcoder.myWenda.interceptor.PassportInterceptor;
 
-@Component
-public class WendaWebConfiguration extends WebMvcConfigurationSupport{
+@Configuration
+public class WendaWebConfiguration implements WebMvcConfigurer{
 	
 	@Autowired
-	PassportInterceptor passportInterceptor;
+	private PassportInterceptor passportInterceptor;
 	
 	@Autowired
-	LoginRequredInterceptor loginRequredInterceptor;
+	private LoginRequredInterceptor loginRequredInterceptor;
+	
 	@Override
-	protected void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(passportInterceptor);
-		registry.addInterceptor(loginRequredInterceptor).addPathPatterns("/user/*");
-		super.addInterceptors(registry);
+	public void addInterceptors(InterceptorRegistry registry) {
+		String[] excludeStrings = new String[] {"/images/**","/scripts/**","/styles/**"};
+		registry.addInterceptor(passportInterceptor).addPathPatterns("/**").excludePathPatterns(excludeStrings);
+		registry.addInterceptor(loginRequredInterceptor).addPathPatterns("/user/**").excludePathPatterns(excludeStrings);
 	}
 	
+	
+//	 @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//       registry.addInterceptor(passportInterceptor).addPathPatterns("/**").excludePathPatterns("/static/**");
+//       registry.addInterceptor(loginRequredInterceptor).addPathPatterns("/user/*").excludePathPatterns("/static/**");
+//    }
+
+	//增加静态资源路径
+//	@Override
+//	protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+//		registry.addResourceHandler("/**")
+//        .addResourceLocations("classpath:/META-INF/resources/")
+//        .addResourceLocations("classpath:/resources/")
+//        .addResourceLocations("classpath:/static/")
+//        .addResourceLocations("classpath:/public/");
+//		super.addResourceHandlers(registry);
+//	}
+	 
 	
 }

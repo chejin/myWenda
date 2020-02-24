@@ -1,6 +1,6 @@
 <#include "header.ftl">
-<link rel="stylesheet" href="../styles/index.css">
-<link rel="stylesheet" href="../styles/detail.css">
+<link type="text/javascript"  rel="stylesheet" href="${path}/styles/index.css">
+<link type="text/javascript"  rel="stylesheet" href="${path}/styles/detail.css">
     <div class="zg-wrap zu-main clearfix " role="main">
         <div class="zu-main-content">
             <div class="zu-main-content-inner">
@@ -73,5 +73,5 @@
         </div>
     </div>
 <#include "js.ftl">
-<script type="text/javascript" src="/static/scripts/main/site/detail.js"></script>
+<script type="text/javascript" src="/scripts/main/site/detail.js"></script>
 <#include "footer.ftl">

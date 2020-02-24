@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @SpringBootApplication
 public class MyWendaApplication {
 //	extends WebMvcConfigurationSupport
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MyWendaApplication.class, args);
 	}

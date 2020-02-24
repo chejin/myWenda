@@ -1,8 +1,5 @@
 package com.newcoder.myWenda.interceptor;
 
-import java.util.Date;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,11 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.newcoder.myWenda.dao.LoginTicketDAO;
-import com.newcoder.myWenda.dao.UserDAO;
 import com.newcoder.myWenda.model.HostHolder;
-import com.newcoder.myWenda.model.LoginTicket;
-import com.newcoder.myWenda.model.User;
 
 @Component
 public class LoginRequredInterceptor implements HandlerInterceptor{
