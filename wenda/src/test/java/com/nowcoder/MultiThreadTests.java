@@ -277,12 +277,12 @@ public class MultiThreadTests {
         }
     }
     public static void main(String[] argv) {
-        testThread();
+        //testThread();
         //testSynchronized();
         //testBlockingQueue();
         //testThreadLocal();
         //testExecutor();
         //testAtomic();
-//        testFuture();
+        testFuture();
     }
 }
